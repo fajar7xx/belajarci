@@ -1,0 +1,35 @@
+buat file ini pakai To Do Tasks sandy081.todotasks
+
+berhenti di menit:
+    ☐ sampai menit 24:59
+
+yang dikerjakan adalah:
+☐ fitur 1
+☐ fitur 2
+☐ fitur 3
+
+bug :
+    ☐ bug 1
+
+instruksi dari video:
+    1. folder application
+    2. folder system untuk sementara jgn di setel karena ini core CI
+    3. pada folder application yang perlu di perhatikan
+        a. controllers
+        b. models
+        c. views
+    folder  panggil contreller/paggil method
+    4. untuk membuat view harus buat controller -> method -> lalu pangil viewsnya
+    5. cara menghilangkan index.php agar memudahkan urlnya yaitu dengan menggunakan htaccess yaitu 
+        removing index file disni -> https://codeigniter.com/user_guide/general/urls.html?highlight=htaccess#
+    6. ubah konfigurasi di folder CONFIG
+        a. config.php -> config['base_url'] = 'alamat url kita'; untu menentukan baseurl kita
+        b. config.php -> $config['index_page'] = ''; buat kosong
+    7. buat controller baru dengan aturan nama file dengan controller harus sama 
+        a. buat class dlu
+        b. buat method default dengan nama index
+    8. buat routes untuk buat default controller nya $route['default_controller'] = 'nama_controller';
+    9. panggil viewnya di dalam method controlelr yang bersangkutan
+    10. buat folder templates sederhana untuk menampung header dan footer
+
+
