@@ -16,7 +16,17 @@ class Home extends CI_Controller{
 
         // artinya adla cari sebuah file yang namanya index.php
         // yang ada di folder home di dlam folder   views
+
+        // menampilkan title berbeda tiap laman
+        $data['judul'] = 'Halaman Home';
+
+        // header
+        $this->load->view('templates/header', $data);
+        // navbar
+        $this->load->view('templates/navbar');
         $this->load->view('home/index');
+        // footer
+        $this->load->view('templates/footer');
     }
 
 }

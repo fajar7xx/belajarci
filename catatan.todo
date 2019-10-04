@@ -1,7 +1,9 @@
 buat file ini pakai To Do Tasks sandy081.todotasks
 
 berhenti di menit:
-    ☐ sampai menit 24:59
+    ✔ video 1 sampai menit 24:59 @done (10/4/2019, 4:48:19 PM)
+    ☐ video 2
+    ☐ video 3 finish
 
 yang dikerjakan adalah:
 ☐ fitur 1
@@ -31,5 +33,30 @@ instruksi dari video:
     8. buat routes untuk buat default controller nya $route['default_controller'] = 'nama_controller';
     9. panggil viewnya di dalam method controlelr yang bersangkutan
     10. buat folder templates sederhana untuk menampung header dan footer
+    11. mengganti tilte tiap halaman dengan bentuk array
+        a. bikin data juldul dengan array dnegan controlelr
+        b. lalu kirim datanya ke view nya
+        c. lalu array tadi masukkan ke title halaman statik di juudl dengan nama variabel dari array tadi
+    12. buat fitur mahasiswa
+        a. buat controller dengan awal kata huruf besar congoh Mahasiswa.php (controller Mahasiswa)
+        b. di dalam controller buat method index.php untuk memanggil tampilan index
+        c. buat view biar lebih gampang buat folder mahasiswa dan buat file index.php sesuai method didalam class di dalam controller
+        d. 
+    13. untuk terkonek ke database harus konek ke modul database
+        a. konfigurasi database
+        b. gunakan fungsi autoload untuk menjalankan fungsi koneksi database secara global
+        c. file autoload berada di application/config/autoload.php
+        d. cari seperti ini dan ubah $autoload['libraries'] = array('database');
+        e. konfigurasi database di application/config/database.php
+        f. ubah sesuai sama aja sih dengan setting database di php procedural
+    14. menggunakan model untuk mengelola data. ingat mengelola data dengan MODEL
+        a. model hasru di load dlu
+        b. $this->load->model('Nama Model');
+        c. pangil database di model menggunakan query builder
+    15. gunakan fungsi construct jika ingin digunakan satu controller
+    16. gunakan base_url untuk link kali ya
+        a. aktifkan dulu base_url() di modul dan buat autoload
+        b. merupakan bagian dari modul url
+        c. aktifkan modul url yang merupakan bagian dari modul helper
 
 
