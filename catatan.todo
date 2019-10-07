@@ -2,7 +2,7 @@ buat file ini pakai To Do Tasks sandy081.todotasks
 
 berhenti di menit:
     ✔ video 1 sampai menit 24:59 @done (10/4/2019, 4:48:19 PM)
-    ☐ video 2
+    ✔ video 2 @done (10/7/2019, 5:07:07 PM)
     ☐ video 3 finish
 
 yang dikerjakan adalah:
@@ -58,5 +58,26 @@ instruksi dari video:
         a. aktifkan dulu base_url() di modul dan buat autoload
         b. merupakan bagian dari modul url
         c. aktifkan modul url yang merupakan bagian dari modul helper
+    17. melakukan CRTUD pada CI untuk menggunakan form aktifkan form pada method
+        a. Membuat fitur tambah data
+            1. pertama buat halaman untuk menampilan form tambah data
+            2. buat method tambah d controller mahasiswa
+            3. buat file tambah.php di folder mahasiswa
+            4. untuk mengecek apa kah inputan berjalan kita akan menggunakan codeigniter menggunkan formvalidation
+            5. aktifkan modul form validation
+            6. arahkan formnya ke  method yang bersangkukan artinya kalau actionnya form kosong berrati itu kita buat d controller data tersebut
+            7.berikan rules per input nya
+            8. posisikan penampilan pesan errornya
+            9. jika datanya valid maka
+            10 membuat pesan error dalam bahasa indonesa berada pada library language copy file yang berada pada system/language/english/form_validation_lang.php ke folder application/language/english
+            11. ubah string di dalam file kedapam bahasa indonesia ya
+            12. jika sudah valid semua kirim file nya kita akan insert ke database
+            13. ambil datanya lalu kita akan jalankan sebuah fungsi di dalam model
+            14. pakai query builder
+            15. buat fitur flashdata utu kmenampilkan pesan sukses ketika data berhasil di input pada halaman tersebut   
+            16. aktifkan modul session data agar flashdata bisa d jalankan
+        b. hapus data
+            1. referensi ke query builder
+        c. update data
 
 

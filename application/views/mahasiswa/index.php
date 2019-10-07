@@ -3,7 +3,19 @@
     <!-- <pre>
         <?= var_dump($mahasiswa) ;?>
     </pre>  -->
-    <a href="#" class="btn btn-outline-primary my-2">Tambah Mahasiswa</a>
+
+    <!-- tampilkan data ketika data berhasil
+    flashdata('nama; flash data yg di set) untuk menampilkan flash -->
+    <?php if($this->session->flashdata()): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Data Mahasiswa <strong>Berhasil</strong> <?=$this->session->flashdata('flash');?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php endif; ?>
+
+    <a href="<?=base_url('mahasiswa/tambah');?>" class="btn btn-outline-primary my-2">Tambah Mahasiswa</a>
     <div class="table-responsive">
         <table class="table table-sm table-hover table-striped">
             <thead>
@@ -26,7 +38,7 @@
                         <td>
                             <a href="#" class="btn btn-success btn-sm">View</a>
                             <a href="#" class="btn btn-info btn-sm">Edit</a>
-                            <a href="#" class="btn btn-danger btn-sm" onclick="confirm('Apakah Anda Yakin Ingin menghapus!')">Delete</a>
+                            <a href="<?=base_url('mahasiswa/hapus/').$mhs['id_mhs'];?>" class="btn btn-danger btn-sm" onclick=" return  confirm('Apakah Anda Yakin Ingin menghapus!')">Delete</a>
                         </td>
                     </tr>
                 <?php
