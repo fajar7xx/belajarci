@@ -75,6 +75,58 @@ class Mahasiswa extends CI_Controller{
         $this->session->set_flashdata('flash', 'Dihapus');
         redirect('mahasiswa');
     }
+
+    public function detail($id){
+
+        $data['judul'] = 'Detail Data Mahasiswa';
+
+        // menampilkan dara yang diambil dari model ke view
+        $data['mahasiswa'] = $this->Mahasiswa_model->getMahasiswaById($id);
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/navbar');
+        $this->load->view('mahasiswa/detail', $data);
+        $this->load->view('templates/footer');
+    }
+
+    // method ubah
+    public function ubah($id){
+        $data['judul'] = "Ubah Data Mahasiswa";
+
+        $data['mahasiswa'] = $this->Mahasiswa_model->getMahasiswaById($id);
+
+        // jurusan biar gampang pakai array sebenarnya buat abel jurusan donk
+        $data['jurusan'] = ['TI', 'SI', 'FE', 'AK', 'FB'];
+
+         // simpan diluar kondisinya
+        // $this->form_validation->rules('name_input', 'Nama pesan kesalahan', 'rulesnya apa' );
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('nim', 'Nim', 'required|numeric');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required');
+        $this->form_validation->set_rules('hp', 'Hp', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('jurusan', 'Jurusan', 'required');
+
+        if($this->form_validation->run() == FALSE){
+            $this->load->view('templates/header', $data);
+            $this->load->view('templates/navbar');
+            $this->load->view('mahasiswa/ubah', $data);
+            $this->load->view('templates/footer');
+         }
+         else{
+            //  echo "berhasil formnya";
+            // kalau sudah ok kita akan ambil data nya dan panggi lsebua mode 
+
+            $this->Mahasiswa_model->ubahMahasiswaById($id);
+
+            // sebelum redirect set session dlu untuk menampilkan pesan sukses
+            // $this->session->set_flashdata('nama_session', 'Ditambahkan');
+            $this->session->set_flashdata('flash', 'Diubah');
+
+            // redirect ke controllernyaa
+            redirect('mahasiswa');
+         }
+    }
 }
  
 

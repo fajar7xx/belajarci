@@ -35,12 +35,42 @@ class Mahasiswa_model extends CI_Model{
         $this->db->insert('mahasiswa', $data);
     }
 
+    // mehot hapus data berdasarkan kondisi where
     public function hapusDataMahasiswa($id){
         // buat fungsi hapus dalam method ini
         // hapus berdasarkan id
-        $this->db->where('id_mhs', $id);
+        // $this->db->where('id_mhs', $id);
         // hapus table berdasar where kondisi 
-        $this->db->delete('mahasiswa');
+        // $this->db->delete('mahasiswa');
+
+        // cara ke2
+        $this->db->delete('mahasiswa', ['id_mhs'=>$id]); 
+    }
+
+    // method shoa all data where id class 
+    public function getMahasiswaById($id){
+        // cari dara bedasarkan id parameter
+        // $query = $this->db->get_where('mahasiswa', ['id_mhs' => $id]);
+        
+        return $this->db->get_where('mahasiswa', ['id_mhs' => $id])->row_array();
+    }
+
+    // method ubah data mahasiswa?
+    public function ubahMahasiswaById($id){
+        $data = [
+
+            // insert dengan anti ddos
+            
+            "nm_mhs" => $this->input->post('nama', TRUE),
+            "nim" => $this->input->post('nim', TRUE),
+            "alamat" => $this->input->post('alamat', TRUE),
+            "no_hp" => $this->input->post('hp', TRUE),
+            "email" => $this->input->post('email', TRUE),
+            "jurusan" => $this->input->post('jurusan', TRUE)
+        ];
+
+        $this->db->where('id_mhs', $this->input->post('id', TRUE));
+        $this->db->update('mahasiswa', $data);
     }
 }
 

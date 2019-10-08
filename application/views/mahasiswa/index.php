@@ -36,8 +36,8 @@
                         <td><?=$mhs['nim'];?></td>
                         <td><?=$mhs['nm_mhs'];?></td>
                         <td>
-                            <a href="#" class="btn btn-success btn-sm">View</a>
-                            <a href="#" class="btn btn-info btn-sm">Edit</a>
+                            <a href="<?=base_url('mahasiswa/detail/').$mhs['id_mhs'];?>" class="btn btn-success btn-sm">Detail</a>
+                            <a href="<?=base_url('mahasiswa/ubah/').$mhs['id_mhs'];?>" class="btn btn-info btn-sm">Edit</a>
                             <a href="<?=base_url('mahasiswa/hapus/').$mhs['id_mhs'];?>" class="btn btn-danger btn-sm" onclick=" return  confirm('Apakah Anda Yakin Ingin menghapus!')">Delete</a>
                         </td>
                     </tr>
