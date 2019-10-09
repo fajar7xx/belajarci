@@ -72,6 +72,23 @@ class Mahasiswa_model extends CI_Model{
         $this->db->where('id_mhs', $this->input->post('id', TRUE));
         $this->db->update('mahasiswa', $data);
     }
+
+    // mehtod pencarian data
+    public function cariDataMahasiswa(){
+
+        $keyword = $this->input->post('keyword', TRUE);
+
+        // mencari data berdasarkan apa yang input pada tombol input
+        $this->db->like('nm_mhs', $keyword);
+        $this->db->or_like('jurusan', $keyword);
+        $this->db->or_like('nim', $keyword);
+        $this->db->or_like('email', $keyword);
+        $this->db->or_like('no_hp', $keyword);
+
+        // jalankan query pencarian
+        return $this->db->get('mahasiswa')->result_array();
+
+    }
 }
 
 

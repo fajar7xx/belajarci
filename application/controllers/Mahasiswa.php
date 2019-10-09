@@ -25,6 +25,11 @@ class Mahasiswa extends CI_Controller{
         // dan memanggil methid getAllMahasiswa
         $data['mahasiswa'] = $this->Mahasiswa_model->getAllMahasiswa();
 
+        // membut fungsi pencarian
+        if($this->input->post('keyword')){
+            $data['mahasiswa'] = $this->Mahasiswa_model->cariDataMahasiswa();
+        }
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/navbar');
         $this->load->view('mahasiswa/index');
